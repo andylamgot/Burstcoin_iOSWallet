@@ -1,0 +1,5 @@
+github "ReSwift/ReSwift"
+github "ReSwift/ReSwiftRouter"
+github "attaswift/BigInt"
+github "TheLevelUp/ZXingObjC"
+github "FredericJacobs/25519"
