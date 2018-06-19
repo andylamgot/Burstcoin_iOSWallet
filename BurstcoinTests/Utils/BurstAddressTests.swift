@@ -33,6 +33,7 @@ class BurstAddressTests: XCTestCase {
     XCTAssertTrue("BURST-M2AP-YKYY-P84J-3JJA4".isValidBurstAddress())
     XCTAssertFalse("-BURST-M2AP-YKYY-P84J-3JJA4".isValidBurstAddress())
     XCTAssertFalse("BURST-M2AP-YKYY-A84J-3JJA4".isValidBurstAddress())
+    XCTAssertFalse("BURST-M2IP-YKYY-P84J-3JJA4".isValidBurstAddress())
   }
   
   func testIsBurstAddress() {

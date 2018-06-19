@@ -21,16 +21,16 @@ public extension String {
   private func ginv(a: Int) -> Int {
     return gexp[31 - glog[a]]
   }
-  
+
   private func gmult(a: Int, b: Int) -> Int {
     if (a == 0 || b == 0) {
       return 0
     }
-    
+
     let idx = (glog[a] + glog[b]) % 31;
     return gexp[idx];
   }
-  
+
   func burstAddressEncode() -> String {
     var plainString10 = [UInt16]()
     var codeword = initialCodeword
@@ -40,11 +40,11 @@ public extension String {
     for a in utf16 {
       plainString10.append(a - zero)
     }
-  
+
     repeat { // base 10 to base 32 conversion
       var digit32 = UInt16(0)
       var newLength = 0
-      
+
       for i in 0..<length {
         digit32 = UInt16(digit32 * 10) + plainString10[i]
         if (digit32 >= 32) {
@@ -56,14 +56,14 @@ public extension String {
           newLength += 1
         }
       }
-  
+
       length = newLength
       codeword[pos] = Int(digit32)
       pos += 1
     } while (length > 0)
-  
+
     var p = [0, 0, 0, 0]
-  
+
     for i in stride(from: base32Length - 1, to: -1, by: -1) {
       let fb = codeword[i] ^ p[3]
 
@@ -72,25 +72,25 @@ public extension String {
       p[1] = p[0] ^ gmult(a:9, b:fb)
       p[0] = gmult(a:17, b:fb)
     }
-  
+
     codeword[13] = p[0]
     codeword[14] = p[1]
     codeword[15] = p[2]
     codeword[16] = p[3]
-  
+
     var out = burstPrefix
-  
+
     for i in 0..<17 {
       out.append(alphabet[codeword[cwmap[i]]])
-  
+
       if ((i & 3) == 3 && i < 13) {
         out.append("-")
       }
     }
-  
+
     return out
   }
-  
+
   /*
    * Decode a BURST-XXXX-XXXX-XXXX-XXXXX into a numeric id
    */
@@ -98,7 +98,7 @@ public extension String {
     if !isValidBurstAddress() {
       return nil
     }
-    
+
     guard let range = range(of: burstPrefix, options: .anchored) else {
       return nil
     }
@@ -108,21 +108,21 @@ public extension String {
 
     var codeword = initialCodeword
     var codewordLength = 0
-  
+
     for i in 0..<address.count {
       let idx = address.index(address.startIndex, offsetBy: i)
       guard let pos = alphabet.index(of: address[idx]) else {
         continue
       }
-      
+
       if (pos > alphabet.count) {
         continue
       }
-      
+
       if (codewordLength > 16) {
         return nil
       }
-      
+
       let codeworkIndex = cwmap[codewordLength]
       codeword[codeworkIndex] = pos
       codewordLength += 1
@@ -130,11 +130,11 @@ public extension String {
 
     var length = base32Length
     var cypherString32 = Array(repeating: 0, count: length)
-    
+
     for i in 0..<length {
       cypherString32[i] = codeword[length - i - 1]
     }
-    
+
     var out = ""
 
     repeat { // base 32 to base 10 conversion
@@ -159,7 +159,7 @@ public extension String {
 
     return String(out.reversed())
   }
-  
+
   /*
    * Check for valid Burst address (format: BURST-XXXX-XXXX-XXXX-XXXXX, XXXX-XXXX-XXXX-XXXXX)
    */
@@ -167,55 +167,55 @@ public extension String {
     guard let range = range(of: burstPrefix, options: .anchored) else {
       return false
     }
-    
+
     let address = self[range.upperBound...]
     var codeword = initialCodeword
     var codewordLength = 0
-  
+
     for i in 0..<address.count {
       let idx = address.index(address.startIndex, offsetBy: i)
       guard let pos = alphabet.index(of: address[idx]) else {
         continue
       }
-  
+
       if (pos > alphabet.count) {
         continue
       }
-  
+
       if (codewordLength > 16) {
         return false
       }
-  
+
       let codeworkIndex = cwmap[codewordLength]
       codeword[codeworkIndex] = pos
       codewordLength += 1
     }
-  
+
     if (codewordLength != 17) {
       return false;
     }
-  
+
     var sum = 0;
-  
+
     for i in 1..<5 {
       var t = 0;
-  
+
       for j in 0..<31 {
         if (j > 12 && j < 27) {
           continue
         }
-  
+
         var pos = j
         if (j > 26) {
           pos -= 14
         }
-  
+
         t ^= gmult(a: codeword[pos], b: gexp[(i * j) % 31])
       }
-  
+
       sum |= t
     }
-  
+
     return (sum == 0)
   }
 
@@ -232,19 +232,20 @@ public extension String {
     parts.remove(at: 0)
     return parts
   }
-  
+
   /*
    * Construct a Burst address from a string array
    */
   public init(burst: [String]) {
     self.init("BURST-" + burst[0] + "-" + burst[1] + "-" + burst[2] + "-" + burst[3])
   }
-  
+
   /*
    * Validation Check. Quick validation of Burst addresses included
+   * https://burstwiki.org/wiki/RS_Address_Format
    */
   func isBurstcoinAddress() -> Bool {
-    guard let _ = range(of: "^BURST-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{5}", options: .regularExpression) else {
+    guard let _ = range(of: "^BURST(-((?![OI])[A-Z2-9]){4}){3}-((?![OI])[A-Z2-9]){5}", options: .regularExpression) else {
       return false
     }
 
