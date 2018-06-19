@@ -21,6 +21,8 @@
 		96258F3220C23AF200116B97 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F3120C23AF200116B97 /* Block.swift */; };
 		962C5D0420BC5AB100A1C2FE /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962C5D0320BC5AB100A1C2FE /* AccountsViewController.swift */; };
 		962C5D0620BC5ADE00A1C2FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962C5D0520BC5ADE00A1C2FE /* SettingsViewController.swift */; };
+		964335EC20D8A62A00E1FD71 /* curve25519_i64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 964335E620D8A62A00E1FD71 /* curve25519_i64.cpp */; };
+		964335ED20D8A62A00E1FD71 /* EllipticCurve25519.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 964335EA20D8A62A00E1FD71 /* EllipticCurve25519.cpp */; };
 		967DB23720BB874A00043094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967DB23620BB874A00043094 /* AppDelegate.swift */; };
 		967DB23C20BB874A00043094 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967DB23A20BB874A00043094 /* Main.storyboard */; };
 		967DB23E20BB874B00043094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967DB23D20BB874B00043094 /* Assets.xcassets */; };
@@ -75,6 +77,13 @@
 		96258F3120C23AF200116B97 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		962C5D0320BC5AB100A1C2FE /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		962C5D0520BC5ADE00A1C2FE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		964335E520D8A62900E1FD71 /* Burstcoin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Burstcoin-Bridging-Header.h"; sourceTree = "<group>"; };
+		964335E620D8A62A00E1FD71 /* curve25519_i64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = curve25519_i64.cpp; sourceTree = "<group>"; };
+		964335E720D8A62A00E1FD71 /* rangeof.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rangeof.h; sourceTree = "<group>"; };
+		964335E820D8A62A00E1FD71 /* IRandomSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRandomSource.h; sourceTree = "<group>"; };
+		964335E920D8A62A00E1FD71 /* curve25519_i64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curve25519_i64.h; sourceTree = "<group>"; };
+		964335EA20D8A62A00E1FD71 /* EllipticCurve25519.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EllipticCurve25519.cpp; sourceTree = "<group>"; };
+		964335EB20D8A62A00E1FD71 /* EllipticCurve25519.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EllipticCurve25519.h; sourceTree = "<group>"; };
 		967DB23320BB874A00043094 /* Burstcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Burstcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		967DB23620BB874A00043094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		967DB23B20BB874A00043094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +155,7 @@
 		96258F2320BCE01500116B97 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				964335DC20D8A61800E1FD71 /* Crypto */,
 				96258F2420BCE03A00116B97 /* BurstAddress.swift */,
 				96E2E5C920CC886500F3365D /* PassphraseGenerator.swift */,
 			);
@@ -158,6 +168,20 @@
 				96258F2620BFBF5200116B97 /* BurstAddressTests.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		964335DC20D8A61800E1FD71 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				964335E620D8A62A00E1FD71 /* curve25519_i64.cpp */,
+				964335E920D8A62A00E1FD71 /* curve25519_i64.h */,
+				964335EA20D8A62A00E1FD71 /* EllipticCurve25519.cpp */,
+				964335EB20D8A62A00E1FD71 /* EllipticCurve25519.h */,
+				964335E820D8A62A00E1FD71 /* IRandomSource.h */,
+				964335E720D8A62A00E1FD71 /* rangeof.h */,
+				964335E520D8A62900E1FD71 /* Burstcoin-Bridging-Header.h */,
+			);
+			path = Crypto;
 			sourceTree = "<group>";
 		};
 		967DB22A20BB874A00043094 = {
@@ -361,6 +385,7 @@
 				TargetAttributes = {
 					967DB23220BB874A00043094 = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0930;
 					};
 					967DB24620BB874B00043094 = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -470,6 +495,7 @@
 				967DB26D20BB8D4000043094 /* AppReducer.swift in Sources */,
 				96E2E5C820CC82CF00F3365D /* FetchMarketDataAction.swift in Sources */,
 				96A01F5220BC3177001DE15B /* AppRoute.swift in Sources */,
+				964335ED20D8A62A00E1FD71 /* EllipticCurve25519.cpp in Sources */,
 				96258F0E20BCC0AA00116B97 /* AccountsState.swift in Sources */,
 				96258F3020C2395D00116B97 /* Attachment.swift in Sources */,
 				96258F2C20C2390B00116B97 /* Keys.swift in Sources */,
@@ -478,6 +504,7 @@
 				96E2E5C520CC7D2F00F3365D /* Market.swift in Sources */,
 				967DB23720BB874A00043094 /* AppDelegate.swift in Sources */,
 				967DB29520BB9CC500043094 /* HistoryViewController.swift in Sources */,
+				964335EC20D8A62A00E1FD71 /* curve25519_i64.cpp in Sources */,
 				96258F2520BCE03A00116B97 /* BurstAddress.swift in Sources */,
 				96258F3220C23AF200116B97 /* Block.swift in Sources */,
 				96258F1620BCC8DD00116B97 /* AccountsReducer.swift in Sources */,
@@ -661,6 +688,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -673,6 +701,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.poc.burstcoinwallet.Burstcoin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Burstcoin/Utils/Crypto/Burstcoin-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -682,6 +712,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -694,6 +725,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.poc.burstcoinwallet.Burstcoin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Burstcoin/Utils/Crypto/Burstcoin-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
