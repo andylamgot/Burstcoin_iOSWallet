@@ -1,5 +1,5 @@
 //
-//  CoinMarketCap.swift
+//  Market.swift
 //  Burstcoin
 //
 //  Created by Andy Prock on 6/9/18.
@@ -10,7 +10,7 @@ import Foundation
 
 struct Market {
 
-  static func getTickerFor(id: Int, currency: String, completion: @escaping ([CoinMarketResponse]) -> Void) {
+  static func getTickerFor(id: Int, currency: String, completion: @escaping ([MarketResponse]) -> Void) {
     let urlString = "https://api.coinmarketcap.com/v2/ticker/\(id)/?convert=\(currency)"
     let urlRequest: URLRequest = URLRequest(url: URL(string: urlString)!)
     let session = URLSession.shared
@@ -22,7 +22,7 @@ struct Market {
       }
       
       do {
-        let ticker = try CoinMarketCapApi.parseResponse(data!)
+        let ticker = try Market.parseResponse(data!)
         DispatchQueue.main.async {
           completion([ticker])
         }
@@ -34,9 +34,9 @@ struct Market {
     task.resume()
   }
 
-  static func parseResponse(_ responseData: Data) throws -> CoinMarketResponse {
+  static func parseResponse(_ responseData: Data) throws -> MarketResponse {
     let decoder = JSONDecoder()
-    return try decoder.decode(CoinMarketResponse.self, from: responseData)
+    return try decoder.decode(MarketResponse.self, from: responseData)
   }
 
 }

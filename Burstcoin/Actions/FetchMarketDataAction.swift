@@ -9,7 +9,7 @@
 import ReSwift
 
 func fetchMarketData(state: AppState, store: Store<AppState>) -> FetchMarketDataAction {
-  CoinMarketCapApi.getTickerFor(id: 573, currency: "BTC") {
+  Market.getTickerFor(id: 573, currency: "BTC") {
     tickers in
     print(tickers)
   }

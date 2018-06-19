@@ -1,5 +1,5 @@
 //
-//  CoinMarketResponse.swift
+//  MarketResponse.swift
 //  Burstcoin
 //
 //  Created by Andy Prock on 6/9/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CoinMarketResponse {
+struct MarketResponse {
   
   struct GenericCodingKeys: CodingKey {
     var stringValue: String
