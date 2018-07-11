@@ -1,5 +1,9 @@
-#pragma once
-
+#ifndef CURVE25519_I64_H
+#define CURVE25519_I64_H 1
+/*
+ Modified by mko.
+ 
+ */
 /* Generic 64-bit integer implementation of Curve25519 ECDH
  * Written by Matthijs van Duin, 200608242056
  * Public domain.
@@ -11,27 +15,28 @@
 
 typedef unsigned char k25519[32]; /* any type of key */
 
-extern const k25519 zero25519;	/* 0 */
-extern const k25519 prime25519;	/* the prime 2^255-19 */
-extern const k25519 order25519;	/* group order (a prime near 2^252+2^124) */
+extern const k25519 zero25519;  /* 0 */
+extern const k25519 prime25519;  /* the prime 2^255-19 */
+extern const k25519 order25519;  /* group order (a prime near 2^252+2^124) */
 
-typedef k25519 pub25519;	/* public key */
-typedef k25519 priv25519;	/* private key (for key agreement) */
-typedef k25519 spriv25519;	/* private key for signing */
-typedef k25519 sec25519;	/* shared secret */
+
+typedef k25519 pub25519;  /* public key */
+typedef k25519 priv25519;  /* private key (for key agreement) */
+typedef k25519 spriv25519;  /* private key for signing */
+typedef k25519 sec25519;  /* shared secret */
+
 
 /********* KEY AGREEMENT *********/
+
+
+/* internal function - do not use directly */
+void core25519(k25519 P, spriv25519 s, const priv25519 k, const k25519 G);
 
 /* Private key clamping
  *   k [out] your private key for key agreement
  *   k  [in]  32 random bytes
  */
-static inline
-void clamp25519(priv25519 k) {
-	k[31] &= 0x7F;
-	k[31] |= 0x40;
-	k[ 0] &= 0xF8;
-}
+void clamp25519(priv25519 k);
 
 /* Key-pair generation
  *   P  [out] your public key
@@ -48,9 +53,13 @@ void keygen25519(pub25519 P, spriv25519 s, priv25519 k);
  *   k  [in]  your private key for key agreement
  *   P  [in]  peer's public key
  * Buffers may overlap.  */
-void curve25519(sec25519 Z, const priv25519 k, const pub25519 P);
+static inline
+void curve25519(sec25519 Z, const priv25519 k, const pub25519 P) {
+  core25519(Z, NULL, k, P);
+}
 
 /********* DIGITAL SIGNATURES *********/
+
 
 /* deterministic EC-KCDSA
  *
@@ -87,6 +96,7 @@ void curve25519(sec25519 Z, const priv25519 k, const pub25519 P);
  * parallel to) hashing the message.
  */
 
+
 /* Signature generation primitive, calculates (x-h)s mod q
  *   v  [out] signature value
  *   h  [in]  signature hash (of message, signature pub key, and context data)
@@ -96,6 +106,7 @@ void curve25519(sec25519 Z, const priv25519 k, const pub25519 P);
  */
 int sign25519(k25519 v, const k25519 h, const priv25519 x, const spriv25519 s);
 
+
 /* Signature verification primitive, calculates Y = vP + hG
  *   Y  [out] signature public key
  *   v  [in]  signature value
@@ -103,3 +114,28 @@ int sign25519(k25519 v, const k25519 h, const priv25519 x, const spriv25519 s);
  *   P  [in]  public key
  */
 void verify25519(pub25519 Y, const k25519 v, const k25519 h, const pub25519 P);
+
+/*
+ * Wrapper for architecture independent calls.
+ *
+ *
+ */
+
+void ecc_curve(unsigned char* Z, unsigned char* k, unsigned char* P){
+  curve25519(Z, k, P);
+}
+
+/*
+ Allow public keygen.
+ */
+void ecc_keygen(unsigned char* P, unsigned char* s, unsigned char* k){
+  keygen25519(P, s, k);
+}
+
+/*
+ Allow public clamp.
+ */
+void ecc_clamp(unsigned char* k){
+  clamp25519(k);
+}
+#endif
