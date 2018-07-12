@@ -644,6 +644,10 @@ void keygen25519(pub25519 P, spriv25519 s, priv25519 k) {
   core25519(P, s, k, NULL);
 }
 
+void curve25519(sec25519 Z, const priv25519 k, const pub25519 P) {
+  core25519(Z, NULL, k, P);
+}
+
 /* v = (x - h) s  mod q  */
 int sign25519(k25519 v, const k25519 h, const priv25519 x, const spriv25519 s) {
   uint8_t tmp[65];

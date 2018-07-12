@@ -55,7 +55,6 @@ class CryptoTests: XCTestCase {
   }
 
   func testSigning() {
-    let pub: Data = crypto.getPublicKey(passphrase)
     let signedData: Data = crypto.sign(message.data(using: .ascii), with: passphrase)
     XCTAssertEqual(signedData.map { String(format: "%02hhx", $0) }.joined(), signedMessage)
   }

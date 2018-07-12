@@ -53,10 +53,7 @@ void keygen25519(pub25519 P, spriv25519 s, priv25519 k);
  *   k  [in]  your private key for key agreement
  *   P  [in]  peer's public key
  * Buffers may overlap.  */
-static inline
-void curve25519(sec25519 Z, const priv25519 k, const pub25519 P) {
-  core25519(Z, NULL, k, P);
-}
+void curve25519(sec25519 Z, const priv25519 k, const pub25519 P);
 
 /********* DIGITAL SIGNATURES *********/
 
