@@ -122,20 +122,22 @@ const NSUInteger kAlgorithmIVSize = kCCBlockSizeAES128;
  *    confirm  r == hash(Y)
  */
 - (BOOL) verify:(NSData*)signature publicKey:(NSData*)pubKey data:(NSData*)data {
-  uint8_t Y[ECCKeyLength] = {0};
   uint8_t v[ECCKeyLength] = {0};
+  uint8_t h[ECCKeyLength] = {0};
 
   [signature getBytes:v length:32];
-
-  uint8_t h[ECCKeyLength] = {0};
   [signature getBytes:h range:NSMakeRange(32, 32)];
 
+  uint8_t Y[ECCKeyLength] = {0};
   verify25519(Y, v, h, pubKey.bytes);
+
+  uint8_t m[ECCKeyLength] = {0};
+  CC_SHA256(data.bytes, (CC_LONG)data.length, m);
 
   uint8_t h2[ECCKeyLength] = {0};
   CC_SHA256_CTX ctx;
   CC_SHA256_Init(&ctx);
-  CC_SHA256_Update(&ctx, data.bytes, ECCKeyLength);
+  CC_SHA256_Update(&ctx, m, ECCKeyLength);
   CC_SHA256_Update(&ctx, Y, ECCKeyLength);
   CC_SHA256_Final(h2, &ctx);
 
@@ -186,7 +188,8 @@ const NSUInteger kAlgorithmIVSize = kCCBlockSizeAES128;
                                    &outLength); // dataOutMoved
 
   if (result == kCCSuccess) {
-    cipherData.length = outLength;
+    [cipherData replaceBytesInRange:NSMakeRange(0, 0) withBytes:(const void *)iv length:16];
+    cipherData.length = outLength + 16;
   } else {
     return nil;
   }

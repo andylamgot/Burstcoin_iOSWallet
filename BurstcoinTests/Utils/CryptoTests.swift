@@ -20,7 +20,7 @@ class CryptoTests: XCTestCase {
   var id: String!
   var address: String!
   var message: String!
-  var signedMessage: String!
+  var signatureHex: String!
   
   override func setUp() {
     super.setUp()
@@ -34,7 +34,7 @@ class CryptoTests: XCTestCase {
     id = "6779331401231193177"
     address = "BURST-LP4T-ZQSJ-9XMS-77A7W"
     message = "hello"
-    signedMessage = "343e2233f1ea3df493e49abb5ebc90ff14df02ab1e85bf0897a698c28330a60729f1f4eeb08f49c2c179bd0b51bbca661b8195787703530586c286a8297ca07e"
+    signatureHex = "343e2233f1ea3df493e49abb5ebc90ff14df02ab1e85bf0897a698c28330a60729f1f4eeb08f49c2c179bd0b51bbca661b8195787703530586c286a8297ca07e"
   }
   
   override func tearDown() {
@@ -55,8 +55,22 @@ class CryptoTests: XCTestCase {
   }
 
   func testSigning() {
-    let signedData: Data = crypto.sign(message.data(using: .ascii), with: passphrase)
-    XCTAssertEqual(signedData.map { String(format: "%02hhx", $0) }.joined(), signedMessage)
+    let payload: Data = message.data(using: .ascii)!
+    let signature: Data = crypto.sign(payload, with: passphrase)
+    XCTAssertEqual(signature.map { String(format: "%02hhx", $0) }.joined(), signatureHex)
+    XCTAssertTrue(crypto.verify(signature, publicKey: crypto.getPublicKey(passphrase), data: payload))
   }
   
+  func testEncryption() {
+    let payload: Data = message.data(using: .ascii)!
+    let publicKey: Data = crypto.getPublicKey(passphrase)
+    let privateKey: Data = crypto.getPrivateKey(passphrase)
+
+    let bytes = [UInt32](repeating: 0, count: 32).map { _ in arc4random() }
+    let nonce = Data(bytes: bytes, count: 32)
+
+    let encrypted: Data = crypto.aesEncrypt(payload, myPrivateKey: privateKey, theirPublicKey: publicKey, nonce: nonce)
+    let decrypted: Data = crypto.aesDecrypt(encrypted, myPrivateKey: privateKey, theirPublicKey: publicKey, nonce: nonce)
+    XCTAssertEqual(decrypted, payload)
+  }
 }

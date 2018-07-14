@@ -15,5 +15,8 @@
 
 - (NSData*) sign:(NSData*) data with:(NSString*) passPhrase;
 - (BOOL) verify:(NSData*)signature publicKey:(NSData*)pubKey data:(NSData*)data;
-  
+
+- (NSData*) aesEncrypt: (NSData*) plainText myPrivateKey:(NSData*)privKey theirPublicKey:(NSData*)pubKey nonce:(NSData*)nonce;
+- (NSData*) aesDecrypt: (NSData*) ivCiphertext myPrivateKey:(NSData*)privKey theirPublicKey:(NSData*)pubKey nonce:(NSData*)nonce;
+
 @end
