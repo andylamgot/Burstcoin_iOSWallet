@@ -35,5 +35,5 @@ struct Block {
   let byteLength: Double?
   let pocTime:Double?
   let blockAts: [Double]?
-  let transactions: [Transaction]?
+  let transactions: [BurstTransaction]?
 }

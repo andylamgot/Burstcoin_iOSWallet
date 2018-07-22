@@ -24,8 +24,6 @@ class CryptoTests: XCTestCase {
   
   override func setUp() {
     super.setUp()
-
-    crypto = Crypto()
     
     passphrase = "ach wie gut dass niemand weiss dass ich Rumpelstilzchen heiss"
     publicKey = "6b223e427b2d44ef8fe2dcb64845d7d9790045167202f1849facef10398bd529"
@@ -50,27 +48,27 @@ class CryptoTests: XCTestCase {
   }
   
   func testGenerateMasterKeys() {
-    let pub: String = crypto.getPublicKey(passphrase).map { String(format: "%02hhx", $0) }.joined()
+    let pub: String = Crypto.getPublicKey(passphrase).map { String(format: "%02hhx", $0) }.joined()
     XCTAssertEqual(pub, publicKey)
   }
 
   func testSigning() {
     let payload: Data = message.data(using: .ascii)!
-    let signature: Data = crypto.sign(payload, with: passphrase)
+    let signature: Data = Crypto.sign(payload, with: passphrase)
     XCTAssertEqual(signature.map { String(format: "%02hhx", $0) }.joined(), signatureHex)
-    XCTAssertTrue(crypto.verify(signature, publicKey: crypto.getPublicKey(passphrase), data: payload))
+    XCTAssertTrue(Crypto.verify(signature, publicKey: Crypto.getPublicKey(passphrase), data: payload))
   }
   
   func testEncryption() {
     let payload: Data = message.data(using: .ascii)!
-    let publicKey: Data = crypto.getPublicKey(passphrase)
-    let privateKey: Data = crypto.getPrivateKey(passphrase)
+    let publicKey: Data = Crypto.getPublicKey(passphrase)
+    let privateKey: Data = Crypto.getPrivateKey(passphrase)
 
     let bytes = [UInt32](repeating: 0, count: 32).map { _ in arc4random() }
     let nonce = Data(bytes: bytes, count: 32)
 
-    let encrypted: Data = crypto.aesEncrypt(payload, myPrivateKey: privateKey, theirPublicKey: publicKey, nonce: nonce)
-    let decrypted: Data = crypto.aesDecrypt(encrypted, myPrivateKey: privateKey, theirPublicKey: publicKey, nonce: nonce)
+    let encrypted: Data = Crypto.encryptMessage(payload, myPrivateKey: privateKey, theirPublicKey: publicKey, nonce: nonce)
+    let decrypted: Data = Crypto.decryptMessage(encrypted, myPrivateKey: privateKey, theirPublicKey: publicKey, nonce: nonce)
     XCTAssertEqual(decrypted, payload)
   }
 }

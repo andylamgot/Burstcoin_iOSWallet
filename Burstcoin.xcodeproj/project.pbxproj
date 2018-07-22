@@ -7,18 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96082D7B2103F89B00229EE8 /* PMKFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96082D792103F3B400229EE8 /* PMKFoundation.framework */; };
+		96082D7C2103F89B00229EE8 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965CD2D62103EE9100B2F4ED /* PromiseKit.framework */; };
+		96082D7D2103F91900229EE8 /* PMKFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96082D792103F3B400229EE8 /* PMKFoundation.framework */; };
+		96082D7E2103F91D00229EE8 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965CD2D62103EE9100B2F4ED /* PromiseKit.framework */; };
+		96082D842104251700229EE8 /* BurstPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082D832104251700229EE8 /* BurstPublicKey.swift */; };
+		96082D87210428AE00229EE8 /* BurstBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082D86210428AE00229EE8 /* BurstBalance.swift */; };
+		96082D8921042B5700229EE8 /* BurstTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082D8821042B5700229EE8 /* BurstTransaction.swift */; };
+		96082D9421043CFE00229EE8 /* BurstTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082D9321043CFE00229EE8 /* BurstTransactionTests.swift */; };
+		96082D962104420A00229EE8 /* BurstUnconfirmedTransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082D952104420A00229EE8 /* BurstUnconfirmedTransactionsTests.swift */; };
+		96082D98210443BB00229EE8 /* BurstPublicKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082D97210443BB00229EE8 /* BurstPublicKeyTests.swift */; };
+		96082D9A2104454E00229EE8 /* BurstBalanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082D992104454E00229EE8 /* BurstBalanceTests.swift */; };
+		96082D9C2104524B00229EE8 /* BurstTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082D9B2104524B00229EE8 /* BurstTransactions.swift */; };
+		96082D9E2104526600229EE8 /* BurstUnconfirmedTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082D9D2104526600229EE8 /* BurstUnconfirmedTransactions.swift */; };
 		96258F0C20BCBF5300116B97 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F0B20BCBF5300116B97 /* AccountService.swift */; };
 		96258F0E20BCC0AA00116B97 /* AccountsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F0D20BCC0AA00116B97 /* AccountsState.swift */; };
 		96258F1620BCC8DD00116B97 /* AccountsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F1520BCC8DD00116B97 /* AccountsReducer.swift */; };
 		96258F2120BCCB4400116B97 /* ZXingObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96258F1E20BCCB4400116B97 /* ZXingObjC.framework */; };
 		96258F2520BCE03A00116B97 /* BurstAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F2420BCE03A00116B97 /* BurstAddress.swift */; };
 		96258F2720BFBF5200116B97 /* BurstAddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F2620BFBF5200116B97 /* BurstAddressTests.swift */; };
-		96258F2A20C2388A00116B97 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F2920C2388A00116B97 /* Transaction.swift */; };
-		96258F2C20C2390B00116B97 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F2B20C2390B00116B97 /* Keys.swift */; };
 		96258F3020C2395D00116B97 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F2F20C2395D00116B97 /* Attachment.swift */; };
 		96258F3220C23AF200116B97 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F3120C23AF200116B97 /* Block.swift */; };
 		962C5D0420BC5AB100A1C2FE /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962C5D0320BC5AB100A1C2FE /* AccountsViewController.swift */; };
 		962C5D0620BC5ADE00A1C2FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962C5D0520BC5ADE00A1C2FE /* SettingsViewController.swift */; };
+		9675BC8E20FBECEB00DE79CE /* Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = 9675BC8D20FBECEB00DE79CE /* Keys.m */; };
 		967DB23720BB874A00043094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967DB23620BB874A00043094 /* AppDelegate.swift */; };
 		967DB23C20BB874A00043094 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967DB23A20BB874A00043094 /* Main.storyboard */; };
 		967DB23E20BB874B00043094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967DB23D20BB874B00043094 /* Assets.xcassets */; };
@@ -37,9 +49,13 @@
 		96A01F5420BC3187001DE15B /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A01F5320BC3187001DE15B /* MainRoute.swift */; };
 		96A66C9920F72695008B7B20 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A66C9820F72694008B7B20 /* Security.framework */; };
 		96B8BA7F20DC7AF200DE2604 /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B8BA7E20DC7AF200DE2604 /* CryptoTests.swift */; };
+		96CE828720FDB5A000038095 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CE828620FDB5A000038095 /* BigInt.framework */; };
+		96CE828920FDC39800038095 /* AccountServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CE828820FDC39800038095 /* AccountServiceTests.swift */; };
+		96CE828B20FDC80700038095 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CE828A20FDC80700038095 /* SipHash.framework */; };
+		96CE828D2103EBDD00038095 /* BurstService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CE828C2103EBDD00038095 /* BurstService.swift */; };
 		96E2E5B520CC717B00F3365D /* MarketResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2E5B420CC717B00F3365D /* MarketResponse.swift */; };
 		96E2E5BA20CC769F00F3365D /* MarketResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2E5B920CC769F00F3365D /* MarketResponseTests.swift */; };
-		96E2E5C520CC7D2F00F3365D /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2E5C420CC7D2F00F3365D /* Market.swift */; };
+		96E2E5C520CC7D2F00F3365D /* MarketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2E5C420CC7D2F00F3365D /* MarketService.swift */; };
 		96E2E5C820CC82CF00F3365D /* FetchMarketDataAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2E5C720CC82CF00F3365D /* FetchMarketDataAction.swift */; };
 		96E2E5CA20CC886500F3365D /* PassphraseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2E5C920CC886500F3365D /* PassphraseGenerator.swift */; };
 		96E2E5CC20CC8BAD00F3365D /* Words.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96E2E5CB20CC8BAD00F3365D /* Words.plist */; };
@@ -63,18 +79,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96082D792103F3B400229EE8 /* PMKFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PMKFoundation.framework; path = Carthage/Build/iOS/PMKFoundation.framework; sourceTree = "<group>"; };
+		96082D832104251700229EE8 /* BurstPublicKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstPublicKey.swift; sourceTree = "<group>"; };
+		96082D86210428AE00229EE8 /* BurstBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstBalance.swift; sourceTree = "<group>"; };
+		96082D8821042B5700229EE8 /* BurstTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstTransaction.swift; sourceTree = "<group>"; };
+		96082D9321043CFE00229EE8 /* BurstTransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstTransactionTests.swift; sourceTree = "<group>"; };
+		96082D952104420A00229EE8 /* BurstUnconfirmedTransactionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstUnconfirmedTransactionsTests.swift; sourceTree = "<group>"; };
+		96082D97210443BB00229EE8 /* BurstPublicKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstPublicKeyTests.swift; sourceTree = "<group>"; };
+		96082D992104454E00229EE8 /* BurstBalanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstBalanceTests.swift; sourceTree = "<group>"; };
+		96082D9B2104524B00229EE8 /* BurstTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstTransactions.swift; sourceTree = "<group>"; };
+		96082D9D2104526600229EE8 /* BurstUnconfirmedTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstUnconfirmedTransactions.swift; sourceTree = "<group>"; };
 		96258F0B20BCBF5300116B97 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		96258F0D20BCC0AA00116B97 /* AccountsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsState.swift; sourceTree = "<group>"; };
 		96258F1520BCC8DD00116B97 /* AccountsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsReducer.swift; sourceTree = "<group>"; };
 		96258F1E20BCCB4400116B97 /* ZXingObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZXingObjC.framework; path = Carthage/Build/iOS/ZXingObjC.framework; sourceTree = "<group>"; };
 		96258F2420BCE03A00116B97 /* BurstAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstAddress.swift; sourceTree = "<group>"; };
 		96258F2620BFBF5200116B97 /* BurstAddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstAddressTests.swift; sourceTree = "<group>"; };
-		96258F2920C2388A00116B97 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		96258F2B20C2390B00116B97 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		96258F2F20C2395D00116B97 /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		96258F3120C23AF200116B97 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		962C5D0320BC5AB100A1C2FE /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		962C5D0520BC5ADE00A1C2FE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		965CD2D62103EE9100B2F4ED /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
+		9675BC8D20FBECEB00DE79CE /* Keys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Keys.m; sourceTree = "<group>"; };
+		9675BC8F20FBECF600DE79CE /* Keys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
 		967DB23320BB874A00043094 /* Burstcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Burstcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		967DB23620BB874A00043094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		967DB23B20BB874A00043094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,9 +130,13 @@
 		96A66C9820F72694008B7B20 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		96B8BA7E20DC7AF200DE2604 /* CryptoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
 		96C60BE920E6EAFC00D7A6A6 /* Burstcoin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Burstcoin-Bridging-Header.h"; sourceTree = "<group>"; };
+		96CE828620FDB5A000038095 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = Carthage/Build/iOS/BigInt.framework; sourceTree = "<group>"; };
+		96CE828820FDC39800038095 /* AccountServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountServiceTests.swift; sourceTree = "<group>"; };
+		96CE828A20FDC80700038095 /* SipHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SipHash.framework; path = Carthage/Build/iOS/SipHash.framework; sourceTree = "<group>"; };
+		96CE828C2103EBDD00038095 /* BurstService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstService.swift; sourceTree = "<group>"; };
 		96E2E5B420CC717B00F3365D /* MarketResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketResponse.swift; sourceTree = "<group>"; };
 		96E2E5B920CC769F00F3365D /* MarketResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketResponseTests.swift; sourceTree = "<group>"; };
-		96E2E5C420CC7D2F00F3365D /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		96E2E5C420CC7D2F00F3365D /* MarketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketService.swift; sourceTree = "<group>"; };
 		96E2E5C720CC82CF00F3365D /* FetchMarketDataAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMarketDataAction.swift; sourceTree = "<group>"; };
 		96E2E5C920CC886500F3365D /* PassphraseGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassphraseGenerator.swift; sourceTree = "<group>"; };
 		96E2E5CB20CC8BAD00F3365D /* Words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Words.plist; sourceTree = "<group>"; };
@@ -116,10 +147,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96A66C9920F72695008B7B20 /* Security.framework in Frameworks */,
-				96258F2120BCCB4400116B97 /* ZXingObjC.framework in Frameworks */,
+				96082D7B2103F89B00229EE8 /* PMKFoundation.framework in Frameworks */,
+				96082D7C2103F89B00229EE8 /* PromiseKit.framework in Frameworks */,
+				96CE828720FDB5A000038095 /* BigInt.framework in Frameworks */,
+				96CE828B20FDC80700038095 /* SipHash.framework in Frameworks */,
 				967DB26720BB8BB300043094 /* ReSwift.framework in Frameworks */,
 				967DB26820BB8BB300043094 /* ReSwiftRouter.framework in Frameworks */,
+				96A66C9920F72695008B7B20 /* Security.framework in Frameworks */,
+				96258F2120BCCB4400116B97 /* ZXingObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +162,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96082D7D2103F91900229EE8 /* PMKFoundation.framework in Frameworks */,
+				96082D7E2103F91D00229EE8 /* PromiseKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,12 +177,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96082D852104282D00229EE8 /* Burst */ = {
+			isa = PBXGroup;
+			children = (
+				96CE828C2103EBDD00038095 /* BurstService.swift */,
+				96082D86210428AE00229EE8 /* BurstBalance.swift */,
+				96082D832104251700229EE8 /* BurstPublicKey.swift */,
+				96082D8821042B5700229EE8 /* BurstTransaction.swift */,
+				96082D9B2104524B00229EE8 /* BurstTransactions.swift */,
+				96082D9D2104526600229EE8 /* BurstUnconfirmedTransactions.swift */,
+			);
+			path = Burst;
+			sourceTree = "<group>";
+		};
+		96082D9221043CEE00229EE8 /* Burst */ = {
+			isa = PBXGroup;
+			children = (
+				96082D992104454E00229EE8 /* BurstBalanceTests.swift */,
+				96082D97210443BB00229EE8 /* BurstPublicKeyTests.swift */,
+				96082D9321043CFE00229EE8 /* BurstTransactionTests.swift */,
+				96082D952104420A00229EE8 /* BurstUnconfirmedTransactionsTests.swift */,
+			);
+			path = Burst;
+			sourceTree = "<group>";
+		};
 		96258F0A20BCBF3000116B97 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				96082D852104282D00229EE8 /* Burst */,
 				96258F0B20BCBF5300116B97 /* AccountService.swift */,
 				96E2E5B420CC717B00F3365D /* MarketResponse.swift */,
-				96E2E5C420CC7D2F00F3365D /* Market.swift */,
+				96E2E5C420CC7D2F00F3365D /* MarketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -172,6 +234,8 @@
 		964335DC20D8A61800E1FD71 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				9675BC8F20FBECF600DE79CE /* Keys.h */,
+				9675BC8D20FBECEB00DE79CE /* Keys.m */,
 				96981D9420F4674A00A8EBFA /* Crypto.h */,
 				96981D9220F4673900A8EBFA /* Crytpo.m */,
 				96981D9820F46B5D00A8EBFA /* curve25519_i64.c */,
@@ -245,6 +309,10 @@
 		967DB26420BB8BB300043094 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96082D792103F3B400229EE8 /* PMKFoundation.framework */,
+				965CD2D62103EE9100B2F4ED /* PromiseKit.framework */,
+				96CE828A20FDC80700038095 /* SipHash.framework */,
+				96CE828620FDB5A000038095 /* BigInt.framework */,
 				96A66C9820F72694008B7B20 /* Security.framework */,
 				96981D7A20E747F000A8EBFA /* Foundation.framework */,
 				96258F1E20BCCB4400116B97 /* ZXingObjC.framework */,
@@ -268,8 +336,6 @@
 			children = (
 				967DB26F20BB8DF800043094 /* AppState.swift */,
 				96258F0D20BCC0AA00116B97 /* AccountsState.swift */,
-				96258F2920C2388A00116B97 /* Transaction.swift */,
-				96258F2B20C2390B00116B97 /* Keys.swift */,
 				96258F2F20C2395D00116B97 /* Attachment.swift */,
 				96258F3120C23AF200116B97 /* Block.swift */,
 			);
@@ -299,6 +365,8 @@
 		96E2E5B820CC766F00F3365D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				96082D9221043CEE00229EE8 /* Burst */,
+				96CE828820FDC39800038095 /* AccountServiceTests.swift */,
 				96E2E5B920CC769F00F3365D /* MarketResponseTests.swift */,
 			);
 			path = Services;
@@ -452,12 +520,20 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReSwiftRouter.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ZXingObjC.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BigInt.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SipHash.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PMKFoundation.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReSwiftRouter.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ZXingObjC.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BigInt.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SipHash.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PromiseKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PMKFoundation.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -484,19 +560,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96258F2A20C2388A00116B97 /* Transaction.swift in Sources */,
 				967DB26D20BB8D4000043094 /* AppReducer.swift in Sources */,
 				96E2E5C820CC82CF00F3365D /* FetchMarketDataAction.swift in Sources */,
 				96A01F5220BC3177001DE15B /* AppRoute.swift in Sources */,
 				96258F0E20BCC0AA00116B97 /* AccountsState.swift in Sources */,
 				96258F3020C2395D00116B97 /* Attachment.swift in Sources */,
-				96258F2C20C2390B00116B97 /* Keys.swift in Sources */,
+				96CE828D2103EBDD00038095 /* BurstService.swift in Sources */,
 				967DB29320BB9CB800043094 /* BalanceViewController.swift in Sources */,
+				96082D842104251700229EE8 /* BurstPublicKey.swift in Sources */,
 				96E2E5B520CC717B00F3365D /* MarketResponse.swift in Sources */,
-				96E2E5C520CC7D2F00F3365D /* Market.swift in Sources */,
+				96E2E5C520CC7D2F00F3365D /* MarketService.swift in Sources */,
 				967DB23720BB874A00043094 /* AppDelegate.swift in Sources */,
+				96082D9E2104526600229EE8 /* BurstUnconfirmedTransactions.swift in Sources */,
 				967DB29520BB9CC500043094 /* HistoryViewController.swift in Sources */,
 				96258F2520BCE03A00116B97 /* BurstAddress.swift in Sources */,
+				96082D8921042B5700229EE8 /* BurstTransaction.swift in Sources */,
+				9675BC8E20FBECEB00DE79CE /* Keys.m in Sources */,
 				96981D9A20F46B5E00A8EBFA /* curve25519_i64.c in Sources */,
 				96258F3220C23AF200116B97 /* Block.swift in Sources */,
 				96258F1620BCC8DD00116B97 /* AccountsReducer.swift in Sources */,
@@ -504,7 +583,9 @@
 				96E2E5CA20CC886500F3365D /* PassphraseGenerator.swift in Sources */,
 				96258F0C20BCBF5300116B97 /* AccountService.swift in Sources */,
 				96A01F5420BC3187001DE15B /* MainRoute.swift in Sources */,
+				96082D9C2104524B00229EE8 /* BurstTransactions.swift in Sources */,
 				962C5D0420BC5AB100A1C2FE /* AccountsViewController.swift in Sources */,
+				96082D87210428AE00229EE8 /* BurstBalance.swift in Sources */,
 				967DB27020BB8DF800043094 /* AppState.swift in Sources */,
 				962C5D0620BC5ADE00A1C2FE /* SettingsViewController.swift in Sources */,
 			);
@@ -514,9 +595,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96082D962104420A00229EE8 /* BurstUnconfirmedTransactionsTests.swift in Sources */,
+				96CE828920FDC39800038095 /* AccountServiceTests.swift in Sources */,
 				96B8BA7F20DC7AF200DE2604 /* CryptoTests.swift in Sources */,
 				96E2E5BA20CC769F00F3365D /* MarketResponseTests.swift in Sources */,
+				96082D9A2104454E00229EE8 /* BurstBalanceTests.swift in Sources */,
+				96082D9421043CFE00229EE8 /* BurstTransactionTests.swift in Sources */,
 				967DB24C20BB874B00043094 /* BurstcoinTests.swift in Sources */,
+				96082D98210443BB00229EE8 /* BurstPublicKeyTests.swift in Sources */,
 				96258F2720BFBF5200116B97 /* BurstAddressTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -681,6 +767,7 @@
 		967DB25C20BB874C00043094 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -711,6 +798,7 @@
 		967DB25D20BB874C00043094 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -743,6 +831,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BurstcoinTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -763,6 +855,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BurstcoinTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

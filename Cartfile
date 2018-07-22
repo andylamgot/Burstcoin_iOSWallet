@@ -1,3 +1,6 @@
 github "ReSwift/ReSwift"
 github "ReSwift/ReSwiftRouter"
 github "TheLevelUp/ZXingObjC"
+github "attaswift/BigInt"
+github "mxcl/PromiseKit"
+github "PromiseKit/Foundation"

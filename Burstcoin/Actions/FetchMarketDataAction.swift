@@ -9,8 +9,7 @@
 import ReSwift
 
 func fetchMarketData(state: AppState, store: Store<AppState>) -> FetchMarketDataAction {
-  Market.getTickerFor(id: 573, currency: "BTC") {
-    tickers in
+  MarketService.getTickerFor(id: 573, currency: "BTC").done { tickers in
     print(tickers)
   }
   

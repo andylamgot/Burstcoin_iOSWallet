@@ -22,8 +22,7 @@ class MarketResponseTests: XCTestCase {
   }
   
   func testDecoding() {
-    let decoder = JSONDecoder()
-    let cmc = try! decoder.decode(MarketResponse.self, from: """
+    let cmc = try! JSONDecoder().decode(MarketResponse.self, from: """
       {
         "data": {
         "id": 573,
@@ -65,5 +64,4 @@ class MarketResponseTests: XCTestCase {
     XCTAssertEqual(cmc.name, "Burst")
     XCTAssertNil(cmc.error)
   }
-
 }

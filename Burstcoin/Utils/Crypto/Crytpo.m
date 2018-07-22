@@ -28,7 +28,7 @@ const NSUInteger kAlgorithmKeySize = kCCKeySizeAES128;
 const NSUInteger kAlgorithmBlockSize = kCCBlockSizeAES128;
 const NSUInteger kAlgorithmIVSize = kCCBlockSizeAES128;
 
-- (NSData*) getPublicKey: (NSString*) passPhrase {
++ (NSData*) getPublicKey: (NSString*) passPhrase {
   uint8_t publicKey[ECCKeyLength] = {0};
   uint8_t hash[ECCKeyLength] = {0};
 
@@ -41,7 +41,7 @@ const NSUInteger kAlgorithmIVSize = kCCBlockSizeAES128;
   return [NSData dataWithBytes:publicKey length:ECCKeyLength];
 }
 
-- (NSData*) getPrivateKey: (NSString*) passPhrase {
++ (NSData*) getPrivateKey: (NSString*) passPhrase {
   uint8_t privateKey[ECCKeyLength] = {0};
 
   const char *s = [passPhrase cStringUsingEncoding:NSASCIIStringEncoding];
@@ -53,6 +53,36 @@ const NSUInteger kAlgorithmIVSize = kCCBlockSizeAES128;
   privateKey[ 0] &= 0xF8;
 
   return [NSData dataWithBytes:privateKey length:ECCKeyLength];
+}
+
++ (NSData*) getSignPrivateKey: (NSString*) passPhrase {
+  uint8_t publicKey[ECCKeyLength] = {0};
+  uint8_t signPrivateKey[ECCKeyLength] = {0};
+  uint8_t hash[ECCKeyLength] = {0};
+
+  const char *s = [passPhrase cStringUsingEncoding:NSASCIIStringEncoding];
+  NSData* data = [NSData dataWithBytes:s length:strlen(s)];
+
+  CC_SHA256(data.bytes, (CC_LONG)data.length, hash);
+  keygen25519(publicKey, signPrivateKey, hash);
+
+  return [NSData dataWithBytes:signPrivateKey length:ECCKeyLength];
+}
+
++ (Keys*)generateMasterKeys:(NSString*) passPhrase {
+  uint8_t publicKey[ECCKeyLength] = {0};
+  uint8_t signPrivateKey[ECCKeyLength] = {0};
+  uint8_t agrementPrivateKey[ECCKeyLength] = {0};
+
+  const char *s = [passPhrase cStringUsingEncoding:NSASCIIStringEncoding];
+  NSData* data = [NSData dataWithBytes:s length:strlen(s)];
+
+  CC_SHA256(data.bytes, (CC_LONG)data.length, agrementPrivateKey);
+  keygen25519(publicKey, signPrivateKey, agrementPrivateKey);
+
+  return [[Keys alloc] initWithPublicKey:[NSData dataWithBytes:publicKey length:ECCKeyLength]
+                          signPrivateKey:[NSData dataWithBytes:signPrivateKey length:ECCKeyLength]
+                     agreementPrivateKey:[NSData dataWithBytes:agrementPrivateKey length:ECCKeyLength]];
 }
 
 /* deterministic EC-KCDSA
@@ -72,7 +102,7 @@ const NSUInteger kAlgorithmIVSize = kCCBlockSizeAES128;
  *
  *    output (v,r) as the signature
  */
-- (NSData*) sign: (NSData*) data with: (NSString*) passPhrase {
++ (NSData*) sign: (NSData*) data with: (NSString*) passPhrase {
   uint8_t P[ECCKeyLength] = {0};
   uint8_t s[ECCKeyLength] = {0};
 
@@ -121,7 +151,7 @@ const NSUInteger kAlgorithmIVSize = kCCBlockSizeAES128;
  *
  *    confirm  r == hash(Y)
  */
-- (BOOL) verify:(NSData*)signature publicKey:(NSData*)pubKey data:(NSData*)data {
++ (BOOL) verify:(NSData*)signature publicKey:(NSData*)pubKey data:(NSData*)data {
   uint8_t v[ECCKeyLength] = {0};
   uint8_t h[ECCKeyLength] = {0};
 
@@ -144,18 +174,75 @@ const NSUInteger kAlgorithmIVSize = kCCBlockSizeAES128;
   return 0 == memcmp(h, h2, ECCKeyLength);
 }
 
-- (NSData*) getSharedSecret:(NSData*)myPrivateKey theirPublicKey:(NSData*)theirPublicKey {
++ (NSData*) getSharedSecret:(NSData*)myPrivateKey theirPublicKey:(NSData*)theirPublicKey {
   uint8_t sharedSecret[ECCKeyLength] = {0};
   curve25519(sharedSecret, myPrivateKey.bytes, theirPublicKey.bytes);
   return [NSData dataWithBytes:sharedSecret length:ECCKeyLength];
 }
 
-- (NSData*) aesEncrypt: (NSData*) plainText myPrivateKey:(NSData*)privKey theirPublicKey:(NSData*)pubKey {
-  void* nonce = malloc(ECCKeyLength);
-  return [self aesEncrypt:plainText myPrivateKey:privKey theirPublicKey:pubKey nonce:[NSData dataWithBytes:nonce length:ECCKeyLength]];
++ (NSData*) aesEncrypt: (NSData*) plainText privateKey:(NSData*)privateKey {
+  NSMutableData* cipherData = [NSMutableData dataWithLength:plainText.length + kAlgorithmBlockSize];
+
+  uint8_t iv[16] = {0};
+  if (0 != SecRandomCopyBytes(kSecRandomDefault, 16, iv)) {
+    return nil;
+  }
+
+  size_t outLength = 0;
+  CCCryptorStatus result = CCCrypt(kCCEncrypt, // operation
+                                   kAlgorithm, // Algorithm
+                                   kCCOptionPKCS7Padding, // options
+                                   privateKey.bytes, // key
+                                   privateKey.length, // keylength
+                                   iv,// iv
+                                   plainText.bytes, // dataIn
+                                   plainText.length, // dataInLength,
+                                   cipherData.mutableBytes, // dataOut
+                                   cipherData.length, // dataOutAvailable
+                                   &outLength); // dataOutMoved
+  if (result == kCCSuccess) {
+    [cipherData replaceBytesInRange:NSMakeRange(0, 0) withBytes:(const void *)iv length:16];
+    cipherData.length = outLength + 16;
+  } else {
+    return nil;
+  }
+
+  return cipherData;
 }
 
-- (NSData*) aesEncrypt: (NSData*) plainText myPrivateKey:(NSData*)privKey theirPublicKey:(NSData*)pubKey nonce:(NSData*)nonce {
++ (NSData*) aesDecrypt: (NSData*) ivCipherData privateKey:(NSData*)privateKey {
+  uint8_t iv[16] = {0};
+  [ivCipherData getBytes:iv range:NSMakeRange(0, 16)];
+
+  unsigned long cipherDataLength = ivCipherData.length - 16;
+  uint8_t* cipherData = malloc(cipherDataLength);
+  [ivCipherData getBytes:cipherData range:NSMakeRange(16, cipherDataLength)];
+
+  NSMutableData* plainData = [NSMutableData dataWithLength:cipherDataLength];
+
+  size_t outLength = 0;
+  CCCryptorStatus result = CCCrypt(kCCDecrypt, // operation
+                                   kAlgorithm, // Algorithm
+                                   kCCOptionPKCS7Padding, // options
+                                   privateKey.bytes, // key
+                                   privateKey.length, // keylength
+                                   iv,// iv
+                                   cipherData, // dataIn
+                                   cipherDataLength, // dataInLength,
+                                   plainData.mutableBytes, // dataOut
+                                   plainData.length, // dataOutAvailable
+                                   &outLength); // dataOutMoved
+
+  if (result == kCCSuccess) {
+    plainData.length = outLength;
+  } else {
+    return nil;
+  }
+
+  return plainData;
+}
+
++ (NSData*) encryptMessage: (NSData*) plainText myPrivateKey:(NSData*)privKey theirPublicKey:(NSData*)pubKey nonce:(NSData*)nonce {
   uint8_t dhSharedSecret[ECCKeyLength] = {0};
   curve25519(dhSharedSecret, privKey.bytes, pubKey.bytes);
 
@@ -197,12 +284,7 @@ const NSUInteger kAlgorithmIVSize = kCCBlockSizeAES128;
   return cipherData;
 }
 
-- (NSData*) aesDecrypt: (NSData*) ivCiphertext myPrivateKey:(NSData*)privKey theirPublicKey:(NSData*)pubKey {
-  void* nonce = malloc(ECCKeyLength);
-  return [self aesDecrypt:ivCiphertext myPrivateKey:privKey theirPublicKey:pubKey nonce:[NSData dataWithBytes:nonce length:ECCKeyLength]];
-}
-
-- (NSData*) aesDecrypt: (NSData*) ivCiphertext myPrivateKey:(NSData*)privKey theirPublicKey:(NSData*)pubKey nonce:(NSData*)nonce {
++ (NSData*) decryptMessage: (NSData*) ivCiphertext myPrivateKey:(NSData*)privKey theirPublicKey:(NSData*)pubKey nonce:(NSData*)nonce {
   uint8_t iv[16] = {0};
   [ivCiphertext getBytes:iv range:NSMakeRange(0, 16)];
 
@@ -243,6 +325,12 @@ const NSUInteger kAlgorithmIVSize = kCCBlockSizeAES128;
   }
 
   return plainData;
+}
+
++ (NSData*) sha256:(NSData*)data {
+  uint8_t hash[CC_SHA256_DIGEST_LENGTH] = {0};
+  CC_SHA256(data.bytes, (CC_LONG)data.length, hash);
+  return [NSData dataWithBytes:hash length:CC_SHA256_DIGEST_LENGTH];
 }
 
 @end

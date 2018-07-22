@@ -99,7 +99,6 @@ extension MarketResponse: Decodable {
       quotes[key.stringValue] = try subContainer.decode(Quote.self, forKey: key)
     }
     self.quotes = quotes
-
   }
   
 }
