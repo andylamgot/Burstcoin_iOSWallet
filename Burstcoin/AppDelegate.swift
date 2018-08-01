@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize
 import ReSwift
 import ReSwiftRouter
 
@@ -19,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var router: Router<AppState>!
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+    let localize = Localize.shared
+    // Set your localize provider.
+    localize.update(provider: .json)
+    // Set your file name
+    localize.update(fileName: "lang")
+    // Set your default language.
+    localize.update(defaultLanguage: "en")
 
     window = UIWindow(frame: UIScreen.main.bounds)
     
@@ -35,15 +44,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     router = Router(store: store, rootRoutable: rootRoutable) { state in
       state.select { $0.navigationState }
     }
-    
+
+    store.dispatch(ReSwiftRouter.SetRouteAction([accountWizardRoute]))
+
 //    if case .loggedIn(_) = store.state.authenticationState.loggedInState {
-      store.dispatch(ReSwiftRouter.SetRouteAction([mainRoute]))
+//      store.dispatch(ReSwiftRouter.SetRouteAction([mainRoute]))
 //    } else {
 //      store.dispatch(ReSwiftRouter.SetRouteAction([loginRoute]))
 //    }
     
     window?.makeKeyAndVisible()
-    
+
     return true
   }
 

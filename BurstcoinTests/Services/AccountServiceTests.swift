@@ -30,9 +30,12 @@ class AccountServiceTests: XCTestCase {
   }
   
   func testGetAccountIdFromPublicKey() {
+    let ex = expectation(description: "")
     AccountService.createActiveAccount(passPhrase: passphrase).done { account in
       XCTAssertEqual(account.id, self.id)
+      ex.fulfill()
     }
+    waitForExpectations(timeout: 1)
   }
 
 }

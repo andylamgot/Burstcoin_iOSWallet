@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "No account created yet. "; ObjectID = "1B1-tm-F1W"; */
+"1B1-tm-F1W.text" = "No account created yet. ";
+
+/* Class = "UIViewController"; title = "Settings"; ObjectID = "6ME-7M-mfy"; */
+"6ME-7M-mfy.title" = "Settings";
+
+/* Class = "UIViewController"; title = "Balance"; ObjectID = "DSE-Nf-fiM"; */
+"DSE-Nf-fiM.title" = "Balance";
+
+/* Class = "UILabel"; text = "Accounts"; ObjectID = "ZGr-Lz-nZe"; */
+"ZGr-Lz-nZe.text" = "Accounts";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "aep-FH-nuy"; */
+"aep-FH-nuy.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Balance"; ObjectID = "b4t-pQ-iuZ"; */
+"b4t-pQ-iuZ.text" = "Balance";
+
+/* Class = "UILabel"; text = "History"; ObjectID = "eK6-bO-xYi"; */
+"eK6-bO-xYi.text" = "History";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "g5A-V1-6Sc"; */
+"g5A-V1-6Sc.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Root View Controller"; ObjectID = "hHe-6z-9WU"; */
+"hHe-6z-9WU.title" = "Root View Controller";
+
+/* Class = "UIViewController"; title = "History"; ObjectID = "idI-5i-Pk1"; */
+"idI-5i-Pk1.title" = "History";
+
+/* Class = "UIViewController"; title = "Accounts"; ObjectID = "kbN-rW-Oa6"; */
+"kbN-rW-Oa6.title" = "Accounts";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "sef-Ap-un3"; */
+"sef-Ap-un3.text" = "Settings";

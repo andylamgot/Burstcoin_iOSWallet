@@ -1,0 +1,149 @@
+{
+    "CREATE": {
+        "ACTION_BAR_TITLE": "Neues Konto erstellen",
+        "DONE": "Fertig",
+        "GENERATE_AGAIN": "Neu Generieren",
+        "INFO_SEED": "Bewege deinen Finger über diesen Bereich.",
+        "INFO_SEED_FINISHED": "Seed gesammelt.",
+        "INFO_STEP_ONE": "Erzeuge einen zufälligen Seed für die Generierung einer Passphrase.",
+        "INFO_STEP_TWO": "Sichere alle 12 Wörter deiner Passphrase in der richtigen Reihenfolge",
+        "INFO_STEP_TWO_ACTION": "Schreibe die folgenden Wörter, getrennt durch ein Leerzeichen, auf und halte sie geheim!",
+        "INFO_STEP_THREE": "Bitte gebe nun jedes Wort deiner Passphrase nacheinander ein.",
+        "INFO_STEP_THREE_ACTION": "Tippe das Wort an der Stelle #{{value}} ein und wähle es aus.",
+        "INFO_STEP_FOUR": "Setze einen sechsstelligen Pin Code für dein Konto. Der Pin Code wird benutzt um ausgehende Transaktionen zu bestätigen.",
+        "PIN_INPUT_HINT": "PIN",
+        "POSSIBILITY_INPUT_HINT": "Wort #{{value}}",
+        "NEXT": "Weiter"
+    },
+    "IMPORT" : {
+        "ACTION_BAR_TITLE": "Bestehendes Konto importieren",
+        "ACTIVE_ACCOUNT": "Aktives Konto",
+        "ACTIVE_ACCOUNT_DESCRIPTION": "Ein aktives Konto bietet volle Funktionalität. Du kannst Burstcoins senden und empfangen. Zudem kannst du deinen Kontostand und deine Transaktionshistorie überprüfen.",
+        "ACTIVE_ACCOUNT_INPUT_HINT": "Passphrase",
+        "ACTIVE_ACCOUNT_PIN_INFO": "Setze einen sechsstelligen Pin Code für dein Konto. Der Pin Code wird benutzt um ausgehende Transaktionen zu verifizieren.",
+        "DONE": "Fertig",
+        "IMPORT": "Importieren",
+        "INFO": "Importiere ein aktives Konto durch Eingabe der zugehörigen Passphrase oder importiere ein Offline Konto durch Eingabe einer Burst Adresse.",
+        "NEXT": "Weiter",
+        "OFFLINE_ACCOUNT": "Offline Konto",
+        "OFFLINE_ACCOUNT_DESCRIPTION": "Ein Offline Konto bietet die selben Funktionalitäten wie ein aktives Konto. Lediglich das Senden von Burstcoins ist nicht möglich.",
+        "OFFLINE_ACCOUNT_INPUT_HINT": "BURST-XXXX-XXXX-XXXX-XXXXX",
+        "PIN_INPUT_HINT": "PIN",
+        "SHOW" : {
+            "QUESTION": "Folgende Adresse importieren ?"
+        }
+    },
+    "TABS": {
+        "ACCOUNTS": {
+            "ACTIVATE": {
+                "ACTION_BAR_TITLE": "Account aktivieren",
+                "DONE": "Fertig",
+                "ENTER_PASSPHRASE": "Bitte gebe die Passphrase des Kontos {{value}} ein.",
+                "ENTER_PIN": "Setze einen sechsstelligen PIN code.",
+                "PASSPHRASE_INPUT_HINT": "Passphrase",
+                "PIN_INPUT_HINT": "PIN",
+                "NEXT": "Weiter"
+            },
+            "BALANCE": "Saldo",
+            "CREATE": "Erstellen",
+            "IMPORT": "Importieren",
+            "REMOVE": "Dieses Konto wirklich entfernen ?",
+            "TITLE": "Konten"
+        },
+        "BALANCE": {
+            "ACTIVATE": "Aktivieren",
+            "BALANCE": "Saldo",
+            "SEND": "Senden",
+            "TITLE": "Saldo"
+        },
+        "HISTORY": {
+            "TITLE": "Historie",
+            "DECRYPT": "Entschlüsseln",
+            "DECRYPT_IMPOSSIBLE": "Kann nicht entschlüsselt werden!",
+            "PIN_INPUT_HINT": "PIN"
+        },
+        "SETTINGS": {
+            "ABOUT": {
+                "ABOUT": "Über uns",
+                "ASSOCIATION": "In Zusammenarbeit mit",
+                "DEVELOPED": "Entwickelt von",
+                "TWITTER": "Folge uns auf Twitter für aktuelle Informationen über unsere Projekte!",
+                "VERSION": "Version"
+            },
+            "CURRENCY": {
+                "CURRENCY": "Währung"
+            },
+            "DOCUMENTATION": {
+                "DOCUMENTATION": "Dokumentation"
+            },
+            "LANGUAGE": {
+                "LANGUAGE": "Sprache"
+            },
+            "NODE": {
+                "INFO": "Der Burst Endpunkt wird für die Kommunikation mit dem Burst Netzwerk genutzt",
+                "NODE": "Endpunkt"
+            },
+            "SUPPORT": {
+                "CONTRIBUTION": "Wir freuen uns auch über jegliche andere Hilfe",
+                "DONATE": "Du magst unsere App ? Unterstütze uns mit einer Spende!",
+                "SUPPORT": "Unterstützen"
+            },
+            "TITLE": "Optionen"
+        }
+    },
+    "SEND": {
+        "ACCEPT": "Akzeptieren",
+        "ACTION_BAR_TITLE": "BURST senden",
+        "ADD_CONTACT": "Neuen Kontakt hinzufügen",
+        "AMOUNT": "Betrag",
+        "BACK": "Zurück",
+        "BALANCE": "Saldo",
+        "CONTACTS": "Kontakte",
+        "FEE": "Gebühr",
+        "FIAT": "Fiat Währung zu BURST",
+        "MESSAGE": "Nachricht",
+        "PIN_INPUT_HINT": "PIN",
+        "RECIPIENT": "Empfänger",
+        "VERIFY": "Verifizieren"
+    },
+    "START" : {
+        "CREATE": "Erstellen",
+        "IMPORT": "Importieren",
+        "INFO": "Kein Konto wurde bisher erstellt. Importiere ein bestehendes Konto oder erstelle ein Neues!"
+    },
+    "NOTIFICATIONS" : {
+        "ADDRESS": "Bitte gebe eine gültige Burst Adresse ein!",
+        "COPIED": "{{value}} in die Zwischenablage kopiert!",
+        "CONTACT_ADDED": "Kontakt erfolgreich hinzugefügt",
+        "DECIMAL_AMOUNT": "Bitte gebe den gewünschten Betrag an Burstcoins als Dezimalzahl ein!",
+        "DECIMAL_FEE": "Bitte gebe eine Gebühr von mindestens 1 Burstcoin ein!",
+        "ENTER_SOMETHING": "Eingabe ist leer!",
+        "EXCEED": "Betrag und Gebühr überschreiten deinen Saldo!",
+        "PIN": "Bitte gebe eine sechstellige Zahl als Pin Code ein!",
+        "REMOVE": "Konto erfolgreich entfernt!",
+        "SELECTED": "Konto ausgewählt: {{value}}",
+        "TRANSACTION": "Transaktion erfolgreich!",
+        "UPDATE_CURRENCY": "Währung erfolgreich aktualisiert!",
+        "UPDATE_LANGUAGE": "Sprache erfolgreich aktualisiert!",
+        "UPDATE_NODE": "Endpunkt erfolgreich aktualisiert!",
+        "WRONG_PASSPHRASE": "Die eingegebene Passphrase passt nicht zum öffentlichen Schlüssel deines Kontos!",
+        "WRONG_PIN": "Der eingegebene Pin Code stimmt nicht mit dem Pin Code des Kontos überein!",
+        "ERRORS": {
+            "ACCOUNT_ID": "Fehler beim Generieren der Konto Id!",
+            "ACTION": "Aktion fehlgeschlagen!",
+            "ADDRESS": "Fehler beim Generieren der Burst Adresse!",
+            "CONNECTION": "Fehler beim Abrufen der Daten. Überprüfe deine Internetverbindung!",
+            "CONTACT":"Fehler beim Hinzufügen des Kontakts!",
+            "CURRENCY": "Fehler beim Aktualisieren der Währung!",
+            "KEYPAIR": "Fehler beim Generieren des Schlüsselpaars!",
+            "LANGUAGE": "Fehler beim Ändern der Sprache!",
+            "NODE": "Fehler beim Aktualisieren des Endpunkts!",
+            "NO_PUBLIC_KEY": "Empfänger hat noch keinen öffentlichen Schlüssel! Senden der verschlüsselten Nachricht nicht möglich",
+            "QR_CODE": "Kein QR Code gescannt!",
+            "REDIRECT": "Senden von Burstcoin nicht möglich. Ausgewähltes Konto ist kein aktives Konto!",
+            "REMOVE": "Fehler beim Entfernen des Kontos!",
+            "UPDATE": "Fehler beim Aktualisieren des Kontos!",
+            "UNKNOWN_ACCOUNT": "Konto ist noch unbekannt. Keine Transaktionen gefunden!"
+        }
+    }
+}

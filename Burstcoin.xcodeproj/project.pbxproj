@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9604813821117A7C007336DE /* Localize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9604813721117A7C007336DE /* Localize.framework */; };
+		9604814F21117E2A007336DE /* lang-al.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604813C21117E2A007336DE /* lang-al.json */; };
+		9604815021117E2A007336DE /* lang-cs.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604813D21117E2A007336DE /* lang-cs.json */; };
+		9604815121117E2A007336DE /* lang-de.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604813E21117E2A007336DE /* lang-de.json */; };
+		9604815221117E2A007336DE /* lang-el.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604813F21117E2A007336DE /* lang-el.json */; };
+		9604815321117E2A007336DE /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814021117E2A007336DE /* lang-en.json */; };
+		9604815421117E2A007336DE /* lang-es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814121117E2A007336DE /* lang-es.json */; };
+		9604815521117E2A007336DE /* lang-fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814221117E2A007336DE /* lang-fr.json */; };
+		9604815621117E2A007336DE /* lang-hi.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814321117E2A007336DE /* lang-hi.json */; };
+		9604815721117E2A007336DE /* lang-hu.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814421117E2A007336DE /* lang-hu.json */; };
+		9604815821117E2A007336DE /* lang-it.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814521117E2A007336DE /* lang-it.json */; };
+		9604815921117E2A007336DE /* lang-jp.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814621117E2A007336DE /* lang-jp.json */; };
+		9604815A21117E2A007336DE /* lang-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814721117E2A007336DE /* lang-ko.json */; };
+		9604815B21117E2A007336DE /* lang-nl.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814821117E2A007336DE /* lang-nl.json */; };
+		9604815C21117E2A007336DE /* lang-pl.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814921117E2A007336DE /* lang-pl.json */; };
+		9604815D21117E2A007336DE /* lang-ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814A21117E2A007336DE /* lang-ru.json */; };
+		9604815E21117E2A007336DE /* lang-sk.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814B21117E2A007336DE /* lang-sk.json */; };
+		9604815F21117E2A007336DE /* lang-sv.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814C21117E2A007336DE /* lang-sv.json */; };
+		9604816021117E2A007336DE /* lang-ta.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814D21117E2A007336DE /* lang-ta.json */; };
+		9604816121117E2A007336DE /* lang-zh.json in Resources */ = {isa = PBXBuildFile; fileRef = 9604814E21117E2A007336DE /* lang-zh.json */; };
 		96082D7B2103F89B00229EE8 /* PMKFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96082D792103F3B400229EE8 /* PMKFoundation.framework */; };
 		96082D7C2103F89B00229EE8 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965CD2D62103EE9100B2F4ED /* PromiseKit.framework */; };
 		96082D7D2103F91900229EE8 /* PMKFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96082D792103F3B400229EE8 /* PMKFoundation.framework */; };
@@ -20,6 +40,7 @@
 		96082D9A2104454E00229EE8 /* BurstBalanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082D992104454E00229EE8 /* BurstBalanceTests.swift */; };
 		96082D9C2104524B00229EE8 /* BurstTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082D9B2104524B00229EE8 /* BurstTransactions.swift */; };
 		96082D9E2104526600229EE8 /* BurstUnconfirmedTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082D9D2104526600229EE8 /* BurstUnconfirmedTransactions.swift */; };
+		96082DA821051B3A00229EE8 /* AddAccountRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96082DA721051B3A00229EE8 /* AddAccountRoute.swift */; };
 		96258F0C20BCBF5300116B97 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F0B20BCBF5300116B97 /* AccountService.swift */; };
 		96258F0E20BCC0AA00116B97 /* AccountsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F0D20BCC0AA00116B97 /* AccountsState.swift */; };
 		96258F1620BCC8DD00116B97 /* AccountsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96258F1520BCC8DD00116B97 /* AccountsReducer.swift */; };
@@ -53,6 +74,9 @@
 		96CE828920FDC39800038095 /* AccountServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CE828820FDC39800038095 /* AccountServiceTests.swift */; };
 		96CE828B20FDC80700038095 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CE828A20FDC80700038095 /* SipHash.framework */; };
 		96CE828D2103EBDD00038095 /* BurstService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CE828C2103EBDD00038095 /* BurstService.swift */; };
+		96D9BAB7210525CF0078919C /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9BAB6210525CF0078919C /* AddAccountViewController.swift */; };
+		96D9BAB9210526D50078919C /* AccountActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9BAB8210526D50078919C /* AccountActions.swift */; };
+		96D9BABB21052A280078919C /* ImportAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D9BABA21052A280078919C /* ImportAccountViewController.swift */; };
 		96E2E5B520CC717B00F3365D /* MarketResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2E5B420CC717B00F3365D /* MarketResponse.swift */; };
 		96E2E5BA20CC769F00F3365D /* MarketResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2E5B920CC769F00F3365D /* MarketResponseTests.swift */; };
 		96E2E5C520CC7D2F00F3365D /* MarketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2E5C420CC7D2F00F3365D /* MarketService.swift */; };
@@ -79,6 +103,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9604813721117A7C007336DE /* Localize.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Localize.framework; path = Carthage/Build/iOS/Localize.framework; sourceTree = "<group>"; };
+		9604813C21117E2A007336DE /* lang-al.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-al.json"; sourceTree = "<group>"; };
+		9604813D21117E2A007336DE /* lang-cs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-cs.json"; sourceTree = "<group>"; };
+		9604813E21117E2A007336DE /* lang-de.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-de.json"; sourceTree = "<group>"; };
+		9604813F21117E2A007336DE /* lang-el.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-el.json"; sourceTree = "<group>"; };
+		9604814021117E2A007336DE /* lang-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en.json"; sourceTree = "<group>"; };
+		9604814121117E2A007336DE /* lang-es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-es.json"; sourceTree = "<group>"; };
+		9604814221117E2A007336DE /* lang-fr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-fr.json"; sourceTree = "<group>"; };
+		9604814321117E2A007336DE /* lang-hi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-hi.json"; sourceTree = "<group>"; };
+		9604814421117E2A007336DE /* lang-hu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-hu.json"; sourceTree = "<group>"; };
+		9604814521117E2A007336DE /* lang-it.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-it.json"; sourceTree = "<group>"; };
+		9604814621117E2A007336DE /* lang-jp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-jp.json"; sourceTree = "<group>"; };
+		9604814721117E2A007336DE /* lang-ko.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-ko.json"; sourceTree = "<group>"; };
+		9604814821117E2A007336DE /* lang-nl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-nl.json"; sourceTree = "<group>"; };
+		9604814921117E2A007336DE /* lang-pl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-pl.json"; sourceTree = "<group>"; };
+		9604814A21117E2A007336DE /* lang-ru.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-ru.json"; sourceTree = "<group>"; };
+		9604814B21117E2A007336DE /* lang-sk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-sk.json"; sourceTree = "<group>"; };
+		9604814C21117E2A007336DE /* lang-sv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-sv.json"; sourceTree = "<group>"; };
+		9604814D21117E2A007336DE /* lang-ta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-ta.json"; sourceTree = "<group>"; };
+		9604814E21117E2A007336DE /* lang-zh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-zh.json"; sourceTree = "<group>"; };
 		96082D792103F3B400229EE8 /* PMKFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PMKFoundation.framework; path = Carthage/Build/iOS/PMKFoundation.framework; sourceTree = "<group>"; };
 		96082D832104251700229EE8 /* BurstPublicKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstPublicKey.swift; sourceTree = "<group>"; };
 		96082D86210428AE00229EE8 /* BurstBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstBalance.swift; sourceTree = "<group>"; };
@@ -89,6 +133,7 @@
 		96082D992104454E00229EE8 /* BurstBalanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstBalanceTests.swift; sourceTree = "<group>"; };
 		96082D9B2104524B00229EE8 /* BurstTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstTransactions.swift; sourceTree = "<group>"; };
 		96082D9D2104526600229EE8 /* BurstUnconfirmedTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstUnconfirmedTransactions.swift; sourceTree = "<group>"; };
+		96082DA721051B3A00229EE8 /* AddAccountRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountRoute.swift; sourceTree = "<group>"; };
 		96258F0B20BCBF5300116B97 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		96258F0D20BCC0AA00116B97 /* AccountsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsState.swift; sourceTree = "<group>"; };
 		96258F1520BCC8DD00116B97 /* AccountsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsReducer.swift; sourceTree = "<group>"; };
@@ -134,6 +179,9 @@
 		96CE828820FDC39800038095 /* AccountServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountServiceTests.swift; sourceTree = "<group>"; };
 		96CE828A20FDC80700038095 /* SipHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SipHash.framework; path = Carthage/Build/iOS/SipHash.framework; sourceTree = "<group>"; };
 		96CE828C2103EBDD00038095 /* BurstService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstService.swift; sourceTree = "<group>"; };
+		96D9BAB6210525CF0078919C /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
+		96D9BAB8210526D50078919C /* AccountActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountActions.swift; sourceTree = "<group>"; };
+		96D9BABA21052A280078919C /* ImportAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportAccountViewController.swift; sourceTree = "<group>"; };
 		96E2E5B420CC717B00F3365D /* MarketResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketResponse.swift; sourceTree = "<group>"; };
 		96E2E5B920CC769F00F3365D /* MarketResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketResponseTests.swift; sourceTree = "<group>"; };
 		96E2E5C420CC7D2F00F3365D /* MarketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketService.swift; sourceTree = "<group>"; };
@@ -147,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9604813821117A7C007336DE /* Localize.framework in Frameworks */,
 				96082D7B2103F89B00229EE8 /* PMKFoundation.framework in Frameworks */,
 				96082D7C2103F89B00229EE8 /* PromiseKit.framework in Frameworks */,
 				96CE828720FDB5A000038095 /* BigInt.framework in Frameworks */,
@@ -177,6 +226,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9604813B21117E2A007336DE /* i18n */ = {
+			isa = PBXGroup;
+			children = (
+				9604813C21117E2A007336DE /* lang-al.json */,
+				9604813D21117E2A007336DE /* lang-cs.json */,
+				9604813E21117E2A007336DE /* lang-de.json */,
+				9604813F21117E2A007336DE /* lang-el.json */,
+				9604814021117E2A007336DE /* lang-en.json */,
+				9604814121117E2A007336DE /* lang-es.json */,
+				9604814221117E2A007336DE /* lang-fr.json */,
+				9604814321117E2A007336DE /* lang-hi.json */,
+				9604814421117E2A007336DE /* lang-hu.json */,
+				9604814521117E2A007336DE /* lang-it.json */,
+				9604814621117E2A007336DE /* lang-jp.json */,
+				9604814721117E2A007336DE /* lang-ko.json */,
+				9604814821117E2A007336DE /* lang-nl.json */,
+				9604814921117E2A007336DE /* lang-pl.json */,
+				9604814A21117E2A007336DE /* lang-ru.json */,
+				9604814B21117E2A007336DE /* lang-sk.json */,
+				9604814C21117E2A007336DE /* lang-sv.json */,
+				9604814D21117E2A007336DE /* lang-ta.json */,
+				9604814E21117E2A007336DE /* lang-zh.json */,
+			);
+			path = i18n;
+			sourceTree = "<group>";
+		};
 		96082D852104282D00229EE8 /* Burst */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +357,7 @@
 				967DB23F20BB874B00043094 /* LaunchScreen.storyboard */,
 				96E2E5CB20CC8BAD00F3365D /* Words.plist */,
 				967DB24220BB874B00043094 /* Info.plist */,
+				9604813B21117E2A007336DE /* i18n */,
 			);
 			path = Burstcoin;
 			sourceTree = "<group>";
@@ -309,6 +385,7 @@
 		967DB26420BB8BB300043094 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9604813721117A7C007336DE /* Localize.framework */,
 				96082D792103F3B400229EE8 /* PMKFoundation.framework */,
 				965CD2D62103EE9100B2F4ED /* PromiseKit.framework */,
 				96CE828A20FDC80700038095 /* SipHash.framework */,
@@ -345,6 +422,8 @@
 		967DB27920BB8F3C00043094 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				96D9BAB6210525CF0078919C /* AddAccountViewController.swift */,
+				96D9BABA21052A280078919C /* ImportAccountViewController.swift */,
 				967DB29220BB9CB800043094 /* BalanceViewController.swift */,
 				967DB29420BB9CC500043094 /* HistoryViewController.swift */,
 				962C5D0320BC5AB100A1C2FE /* AccountsViewController.swift */,
@@ -357,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				96A01F5120BC3177001DE15B /* AppRoute.swift */,
+				96082DA721051B3A00229EE8 /* AddAccountRoute.swift */,
 				96A01F5320BC3187001DE15B /* MainRoute.swift */,
 			);
 			path = Routes;
@@ -375,6 +455,7 @@
 		96E2E5C620CC82A200F3365D /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				96D9BAB8210526D50078919C /* AccountActions.swift */,
 				96E2E5C720CC82CF00F3365D /* FetchMarketDataAction.swift */,
 			);
 			path = Actions;
@@ -488,9 +569,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				96E2E5CC20CC8BAD00F3365D /* Words.plist in Resources */,
+				9604815E21117E2A007336DE /* lang-sk.json in Resources */,
+				9604815421117E2A007336DE /* lang-es.json in Resources */,
+				9604815821117E2A007336DE /* lang-it.json in Resources */,
+				9604814F21117E2A007336DE /* lang-al.json in Resources */,
+				9604815F21117E2A007336DE /* lang-sv.json in Resources */,
+				9604816021117E2A007336DE /* lang-ta.json in Resources */,
 				967DB24120BB874B00043094 /* LaunchScreen.storyboard in Resources */,
+				9604815C21117E2A007336DE /* lang-pl.json in Resources */,
 				967DB23E20BB874B00043094 /* Assets.xcassets in Resources */,
+				9604815721117E2A007336DE /* lang-hu.json in Resources */,
+				9604815521117E2A007336DE /* lang-fr.json in Resources */,
+				9604815221117E2A007336DE /* lang-el.json in Resources */,
+				9604815321117E2A007336DE /* lang-en.json in Resources */,
+				9604816121117E2A007336DE /* lang-zh.json in Resources */,
+				9604815621117E2A007336DE /* lang-hi.json in Resources */,
+				9604815921117E2A007336DE /* lang-jp.json in Resources */,
+				9604815121117E2A007336DE /* lang-de.json in Resources */,
+				9604815B21117E2A007336DE /* lang-nl.json in Resources */,
+				9604815D21117E2A007336DE /* lang-ru.json in Resources */,
+				9604815A21117E2A007336DE /* lang-ko.json in Resources */,
 				967DB23C20BB874A00043094 /* Main.storyboard in Resources */,
+				9604815021117E2A007336DE /* lang-cs.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +624,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SipHash.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PMKFoundation.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Localize.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -534,6 +635,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SipHash.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PromiseKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PMKFoundation.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Localize.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -568,6 +670,8 @@
 				96CE828D2103EBDD00038095 /* BurstService.swift in Sources */,
 				967DB29320BB9CB800043094 /* BalanceViewController.swift in Sources */,
 				96082D842104251700229EE8 /* BurstPublicKey.swift in Sources */,
+				96D9BAB9210526D50078919C /* AccountActions.swift in Sources */,
+				96D9BABB21052A280078919C /* ImportAccountViewController.swift in Sources */,
 				96E2E5B520CC717B00F3365D /* MarketResponse.swift in Sources */,
 				96E2E5C520CC7D2F00F3365D /* MarketService.swift in Sources */,
 				967DB23720BB874A00043094 /* AppDelegate.swift in Sources */,
@@ -582,8 +686,10 @@
 				96981D9320F4673900A8EBFA /* Crytpo.m in Sources */,
 				96E2E5CA20CC886500F3365D /* PassphraseGenerator.swift in Sources */,
 				96258F0C20BCBF5300116B97 /* AccountService.swift in Sources */,
+				96D9BAB7210525CF0078919C /* AddAccountViewController.swift in Sources */,
 				96A01F5420BC3187001DE15B /* MainRoute.swift in Sources */,
 				96082D9C2104524B00229EE8 /* BurstTransactions.swift in Sources */,
+				96082DA821051B3A00229EE8 /* AddAccountRoute.swift in Sources */,
 				962C5D0420BC5AB100A1C2FE /* AccountsViewController.swift in Sources */,
 				96082D87210428AE00229EE8 /* BurstBalance.swift in Sources */,
 				967DB27020BB8DF800043094 /* AppState.swift in Sources */,
